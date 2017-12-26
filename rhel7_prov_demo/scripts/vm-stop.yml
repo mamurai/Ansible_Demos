@@ -2,6 +2,7 @@
 - name: stop all guests
   hosts: vm_fusion_host
   remote_user: mamurai
+  group_vars: ../group_vars/vm_fusion_host
 
   tasks:
     - name: shutdown each guests
