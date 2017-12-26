@@ -1,6 +1,6 @@
 ---
 - name: start vm_fusion guests 
-  hosts: vm_fushion_host
+  hosts: vm_fusion_host
   remote_user: mamurai
 
   roles:
