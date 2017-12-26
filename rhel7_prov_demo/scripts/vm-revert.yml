@@ -1,6 +1,6 @@
 ---
 - name: stop all guests
-  hosts: MACBOOK
+  hosts: vm_fusion_host
   remote_user: mamurai
 
   tasks:
