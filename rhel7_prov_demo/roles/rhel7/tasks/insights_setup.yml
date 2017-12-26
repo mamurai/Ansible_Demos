@@ -1,0 +1,11 @@
+---
+- name: Install Insights Packages
+  yum: name=redhat-access-insights state=latest
+
+- name: Check Insights regist status
+  stat: path=/etc/redhat-access-insights/.registered
+  register: unreg
+
+- name: Insights Register
+  shell: redhat-access-insights --register
+  when: unreg.stat.exists == false

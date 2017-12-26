@@ -1,0 +1,10 @@
+---
+- name: Same as above but subscribe to a specific pool by ID.
+  redhat_subscription:
+    state: present
+    username: "{{ rht_user }}"
+    password: "{{ rht_pass }}"
+    pool_ids: "{{ pool_ids }}"
+
+- name: sleep 60 sec
+  command: sleep 60

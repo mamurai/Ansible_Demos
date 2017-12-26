@@ -1,0 +1,6 @@
+- name: start all guests
+  shell: /Applications/VMware\ Fusion.app/Contents/Public/vmrun -T ws start {{ item.vmx }} nogui
+  with_items: "{{ vm_guests }}"
+
+- name: sleep {{ sleep_sec }}
+  shell: sleep "{{ sleep_sec }}"

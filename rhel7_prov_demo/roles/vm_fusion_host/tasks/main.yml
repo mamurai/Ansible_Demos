@@ -1,0 +1,3 @@
+---
+- name: start vm_fusion hosts
+  import_tasks: vm_fusion_start.yml

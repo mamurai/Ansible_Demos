@@ -1,0 +1,21 @@
+---
+### Control RHSM subscribe
+rhsm_register : False
+prov_insights : False
+prov_nginx : True
+prov_firewalld: True
+
+### for rhsm_regist.yml ###
+rht_user: CHANGE_YOUR_RH_ACCOUNT
+rht_pass: CHANGE_YOUR_RH_PASSWORD
+pool_ids: CHANGE_YOUR_RH_POOLID
+
+### for rhsm_enable-repos.yml ###
+enable_repos:
+  - rhel-7-server-rpms
+  - rhel-server-rhscl-7-rpms
+
+### for nginx ###
+nginx_pkg_name: nginx16
+nginx_config: /opt/rh/{{ nginx_pkg_name }}/root/etc/nginx/nginx.conf
+nginx_port: 81

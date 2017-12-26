@@ -1,0 +1,3 @@
+---
+- name: start kvm hosts
+  import_tasks: virt-start.yml

@@ -1,0 +1,15 @@
+[kvm_host]
+#MACBOOK ansible_host=192.168.124.1
+
+[vm_fusion_host]
+#MACBOOK ansible_host=192.168.23.1
+
+[rhel7]
+#rhel7x ansible_host=192.168.124.201
+#rhel7y ansible_host=192.168.124.202
+#rhel7z ansible_host=192.168.124.203
+#rhel7mx ansible_host=192.168.23.105
+#rhel7my ansible_host=192.168.23.106
+
+[localhost]
+#ansible ansible_host=192.168.124.200

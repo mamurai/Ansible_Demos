@@ -1,0 +1,20 @@
+---
+- name: Subscription Regist 
+  import_tasks: rhsm_regist.yml
+  when: rhsm_register is defined and rhsm_register
+
+- name: Subscription Enable Repository
+  import_tasks: rhsm_enable-repos.yml
+  when: rhsm_register is defined and rhsm_register
+
+- name: Set up Red Hat Insights
+  import_tasks: insights_setup.yml
+  when: prov_insights is defined and prov_insights
+
+- name: Setup nginx
+  import_tasks: nginx.yml
+  when: prov_nginx is defined and prov_nginx
+
+- name: Modyfy firewalld Config
+  import_tasks: firewalld.yml
+  when: prov_firewalld is defined and prov_firewalld

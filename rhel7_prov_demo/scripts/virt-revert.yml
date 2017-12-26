@@ -1,0 +1,21 @@
+---
+- name: stop all guests and revert
+  hosts: MACBOOK
+
+  tasks:
+    - name: shutdown each guests
+      virt: name={{ item }} state=shutdown
+      with_items: "{{ kvm_guests }}"
+
+    - name : Wait shutdown guests
+      shell: virsh list | grep {{ item }}
+      failed_when: False
+      register: result
+      until: result.rc != 0
+      retries: 10
+      delay: 10
+      with_items: "{{ kvm_guests }}"
+
+    - name : revert snapshot to init state
+      shell: virsh snapshot-revert {{ item }} sn_{{ item }}_rh-registed
+      with_items: "{{ kvm_guests }}"

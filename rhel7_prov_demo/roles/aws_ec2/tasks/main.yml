@@ -1,0 +1,3 @@
+---
+- name: launch ec2 instance
+  import_tasks: launch_ec2_ins.yml

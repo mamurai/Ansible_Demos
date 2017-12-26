@@ -1,0 +1,19 @@
+---
+- name: Install packages
+  yum: 
+    name: "{{ nginx_pkg_name }}"
+    state: present
+
+- name: Modify nginx Listen Port
+  replace:
+    dest: "{{ nginx_config }}"
+    regexp: '(^\s+listen\s+)80;$'
+    replace: '\1 {{ nginx_port }} ;'
+    backup: yes
+
+- name: Enable nginx
+  service: 
+    name: "{{ nginx_pkg_name }}-nginx"
+    state: started
+    enabled: yes 
+

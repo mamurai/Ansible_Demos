@@ -1,0 +1,11 @@
+---
+- name: Red Hat Subscription Unregister 
+  hosts: rhel7
+
+  tasks:
+  - name: Same as above but subscribe to a specific pool by ID.
+    redhat_subscription:
+      state: absent
+      username: "{{ rht_user }}"
+      password: "{{ rht_pass }}"
+      pool_ids: "{{ pool_ids }}"

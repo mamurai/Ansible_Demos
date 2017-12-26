@@ -1,0 +1,4 @@
+---
+- hosts: MACBOOK
+  roles:
+    - kvm_host

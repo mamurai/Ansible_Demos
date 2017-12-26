@@ -1,0 +1,5 @@
+---
+- hosts: rhel7,ec2
+  become: True
+  roles:
+    - rhel7 

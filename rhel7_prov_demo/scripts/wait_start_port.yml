@@ -1,0 +1,14 @@
+---
+- name: Wait open ports
+  hosts: rhel7
+
+  tasks:
+
+  - name: wait for sshd up
+    wait_for:
+      host: "{{ ansible_host }}"
+      port: "{{ ansible_port | default(22) }}"
+      search_regex: OpenSSH
+      delay: 30
+    vars:
+      ansible_connection: local

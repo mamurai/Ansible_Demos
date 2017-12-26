@@ -1,0 +1,5 @@
+---
+kvm_guests:
+  - rhel7x
+  - rhel7y
+  - rhel7z

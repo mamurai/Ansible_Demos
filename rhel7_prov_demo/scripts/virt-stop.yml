@@ -1,0 +1,17 @@
+---
+- name: stop all guests
+  hosts: MACBOOK
+
+  tasks:
+    - name: shutdown each guests
+      virt: name={{ item }} state=shutdown
+      with_items: "{{ kvm_guests }}"
+
+    - name : Wait shutdown guests
+      shell: virsh list | grep {{ item }}
+      failed_when: False
+      register: result
+      until: result.rc != 0
+      retries: 10
+      delay: 10
+      with_items: "{{ kvm_guests }}"

@@ -1,0 +1,18 @@
+---
+- name: stop all guests
+  hosts: MACBOOK
+  remote_user: mamurai
+
+  tasks:
+    - name: shutdown each guests
+      shell: /Applications/VMware\ Fusion.app/Contents/Public/vmrun -T ws stop {{ item.vmx }} 
+      with_items: "{{ vm_guests }}"
+
+    - name : Wait shutdown guests
+      shell: /Applications/VMware\ Fusion.app/Contents/Public/vmrun -T ws list | grep {{ item.vmx }}
+      failed_when: False
+      register: result
+      until: result.rc != 0
+      retries: 10
+      delay: 10
+      with_items: "{{ vm_guests }}"

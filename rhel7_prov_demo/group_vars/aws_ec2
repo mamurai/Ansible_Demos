@@ -1,0 +1,9 @@
+keypair:  aws_key
+instance_type: t1.micro
+security_group_id: sg-a612b0df
+subnet_id: subnet-fffd5d89
+image: ami-30ef0556
+region: ap-northeast-1
+ins_count: 1
+ec2_access_key: CHANGE_TO_YOUR_ACCESS_KEY
+ec2_secret_key: CHANGE_TO_YOUR_SECRET_KEY

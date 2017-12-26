@@ -1,0 +1,7 @@
+---
+vm_guests:
+  - host: rhel7mx
+    vmx: /Users/mamurai/Virtual_Machines/rhel7mx.vmwarevm/rhel7mx.vmx 
+  - host: rhel7my
+    vmx: /Users/mamurai/Virtual_Machines/rhel7my.vmwarevm/rhel7my.vmx
+sleep_sec: 20

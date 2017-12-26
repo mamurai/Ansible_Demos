@@ -1,0 +1,19 @@
+---
+- name: Install firewalld packages
+  yum: 
+    name: firewalld
+    state: present
+
+- name: Enable firewalld
+  service: 
+    name: firewalld.service
+    state: started
+    enabled: yes 
+
+- name: Open nginx port
+  firewalld:
+    zone: public
+    port: "{{ nginx_port }}/tcp"
+    permanent: true
+    state: enabled
+    immediate: true
