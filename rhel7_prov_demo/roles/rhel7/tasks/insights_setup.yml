@@ -3,7 +3,7 @@
   yum: name=redhat-access-insights state=latest
 
 - name: Check Insights regist status
-  stat: path=/etc/redhat-access-insights/.registered
+  stat: path=/etc/insights-client/.registered
   register: unreg
 
 - name: Insights Register
