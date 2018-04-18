@@ -1,5 +1,5 @@
 keypair:  aws_key
-instance_type: t1.micro
+instance_type: t2.micro
 security_group_id: sg-a612b0df
 subnet_id: subnet-fffd5d89
 image: ami-30ef0556
