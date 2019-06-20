@@ -1,5 +1,5 @@
 ---
-- name: Addr BigipConfig
+- name: Add Node
   import_tasks: add_node.yml
 
 - name: Add Pool

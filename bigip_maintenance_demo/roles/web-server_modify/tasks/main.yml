@@ -1,0 +1,3 @@
+---
+- name: Modify index.html
+  import_tasks: modify_index_html.yml 

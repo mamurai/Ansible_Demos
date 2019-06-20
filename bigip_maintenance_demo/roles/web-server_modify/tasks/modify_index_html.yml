@@ -1,0 +1,23 @@
+# Set Timezone JST
+- name: Set timezone to Asia/Tokyo
+  timezone:
+    name: Asia/Tokyo
+
+# GET hostname
+- name: Get Hostname
+  shell: hostname
+  register: hostname
+
+# GET Date
+- name: Get Date
+  shell: date "+%Y/%m/%d %H:%M:%S  %Z"
+  register: date
+
+# Modify index.html
+- name: Modify index.html
+  template: src={{ HTML_SRC }} dest={{ HTML_DEST }}
+
+# Sleep 10 Sec
+- name: Sleep 10 sec
+  shell: sleep 10
+

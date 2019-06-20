@@ -1,0 +1,11 @@
+---
+- hosts: host1
+  become: yes
+  gather_facts: false
+
+  vars:
+    HTML_SRC: templates/web-server/html/index.html.j2
+    HTML_DEST: /var/www/html/index.html
+
+  roles:
+    - web-server_modify

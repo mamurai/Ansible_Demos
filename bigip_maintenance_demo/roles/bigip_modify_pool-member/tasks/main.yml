@@ -1,0 +1,3 @@
+---
+- name: Modify Pool Member
+  import_tasks: mod_pool-member.yml

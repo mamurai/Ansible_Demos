@@ -1,0 +1,11 @@
+---
+- hosts: lb
+  connection: local
+  gather_facts: false
+
+  vars: 
+    STATE: disabled
+    HOST: host1
+
+  roles:
+    - bigip_modify_pool-member
