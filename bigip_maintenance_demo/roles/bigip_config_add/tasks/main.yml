@@ -1,0 +1,13 @@
+---
+- name: Addr BigipConfig
+  import_tasks: add_node.yml
+
+- name: Add Pool
+  import_tasks: add_pool.yml
+
+- name: Add Pool Member
+  import_tasks: add_pool-member.yml
+
+- name: Add Virtual Server
+  import_tasks: add_virtual-server.yml
+

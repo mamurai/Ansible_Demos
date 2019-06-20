@@ -1,0 +1,7 @@
+---
+- hosts: lb
+  connection: local
+  gather_facts: false
+
+  roles:
+    - bigip_config_delete

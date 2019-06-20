@@ -1,0 +1,5 @@
+- name: DELETE VIRTUAL SERVER
+  bigip_virtual_server:
+    provider: "{{provider}}"
+    name: "vip"
+    state: absent

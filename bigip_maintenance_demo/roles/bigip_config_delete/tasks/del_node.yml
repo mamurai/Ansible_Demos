@@ -1,0 +1,6 @@
+- name: DELETE NODES
+  bigip_node:
+    provider: "{{provider}}"
+    name: "{{hostvars[item].inventory_hostname}}"
+    state: absent
+  loop: "{{ groups['webservers'] }}"

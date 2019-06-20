@@ -1,0 +1,13 @@
+---
+- name: Setup Provider
+  import_tasks: set_provider.yml
+
+- name: Delete Virtual Server
+  import_tasks: del_virtual-server.yml
+
+- name: Delete Pool
+  import_tasks: del_pool.yml
+
+- name: Delete Bigip nodes
+  import_tasks: del_node.yml
+
