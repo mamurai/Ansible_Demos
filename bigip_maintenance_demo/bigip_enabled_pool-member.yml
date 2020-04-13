@@ -5,7 +5,7 @@
 
   vars: 
     STATE: enabled
-    HOST: host1
+    HOST: node1
 
   roles:
     - bigip_modify_pool-member
