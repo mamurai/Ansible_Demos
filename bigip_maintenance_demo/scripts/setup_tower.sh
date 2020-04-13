@@ -29,7 +29,7 @@ tower-cli team associate --team=Infra --user=infra02
 
 ## Inventory ##
 tower-cli inventory create --name="F5-Demo-Inventory" --organization="F5-Demo"
-sudo tower-manage inventory_import --source=/home/${USER}/networking-workshop/lab_inventory/hosts --inventory-name="F5-Demo-Inventory"
+sudo tower-manage inventory_import --source=/home/${USER}/lab_inventory/hosts --inventory-name="F5-Demo-Inventory"
 
 ## Project ##
 tower-cli project create --name="F5-Demo" --description="F5-Demo Project" --scm-type="git" --scm-url="https://github.com/mamurai/Ansible_Demos" --organization="F5-Demo" --wait
